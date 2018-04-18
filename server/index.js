@@ -24,7 +24,7 @@ app.use(cookieParser());
 	app.use(cookieSession({
 		name:'sess_id',
 		keys:keys,
-		maxAge:20*60*1000 //20min
+		maxAge:2*60*1000 //20min
 	}))
 })()
 

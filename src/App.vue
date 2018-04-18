@@ -70,7 +70,7 @@ export default {
     };
 
     //网页刷新查看是否已经登录
-    this.$http.get(('/api/login/')).then((response) => {
+    this.$http.get(('/api/login')).then((response) => {
       if(response.data.type=="good"){
             this.$store.dispatch('changeuser_entry');
       }else{

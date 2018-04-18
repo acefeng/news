@@ -15,11 +15,13 @@ conn.connect(function(err){
 });
 
 router.use('/',(req,res,next) => {
+	console.log(req);
 	if(!req.session['admin_id']){
-		console.log('没有登录')
+		console.log('没有登录');
 		next();
 	}else{
 		console.log(req.session);
+		console.log(req.cookie);
 		var str = JSON.stringify({
 			type:'good'
 		});
@@ -28,6 +30,8 @@ router.use('/',(req,res,next) => {
 })
 
 router.post('/',(req,res) => {
+	console.log(11111);
+	
 	const username = req.body.params.username;
 	const password = req.body.params.password;
 	const sql = `select * from entry where username='${username}'`;
